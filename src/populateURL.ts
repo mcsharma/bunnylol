@@ -43,7 +43,6 @@ export const populateURL = (urlTemplates: string[], params: string[]) => {
 
 function solve(urlTemplate: string, params: string[]) {
   return urlTemplate.replace(RE, (match, capture1, capture2, pos, inputStr) => {
-    // console.log(match, capture1, capture2, capture3, pos, inputStr);
     const paramIndex = Number(capture1 ?? "1");
     const defaultValue = capture2 ? capture2.slice(1) : "";
     return params[paramIndex - 1] ?? defaultValue;

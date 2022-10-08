@@ -13,7 +13,12 @@ app.get("/go", (req, res) => {
   };
   const q = (req.query as RequestParams).query ?? "";
   let [command, ...params] = q.split(" ");
-  let urlTemplates = commandsMap[command] ?? [];
+  let urlTemplates = commandsMap[command];
+  if (urlTemplates === undefined) {
+    urlTemplates = commandsMap.g;
+    // Prepend the first keyword back in the params
+    params = [command, ...params];
+  }
   if (!Array.isArray(urlTemplates)) {
     urlTemplates = [urlTemplates];
   }
