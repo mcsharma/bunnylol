@@ -3,7 +3,7 @@ import { commandsMap } from "./commands";
 import formatURL from "./formatURL";
 import { populateURL } from "./populateURL";
 const app = express();
-const port = 80;
+const port = process.env.PORT || 80;
 
 const GOOGLE = "google.com";
 
