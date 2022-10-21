@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Smart browser bookmarking tool with parameters and more",
   "main": "index.js",
-  "repository": "https://github.com/mcsharma1990/bunnylol.git",
+  "repository": "https://github.com/mcsharma/bunnylol.git",
+  "homepage": "https://mcsharma.github.io/bunnylol",
   "author": "mcsharma1990@gmail.com",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "dev": "nodemon"
+    "postinstall": "tsc",
+    "start": "node dist/index.js",
+    "start:dev": "nodemon"
   },
   "dependencies": {
     "express": "^4.18.1"
