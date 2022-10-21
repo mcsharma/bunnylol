@@ -7,6 +7,14 @@ const port = process.env.PORT || 80;
 
 const GOOGLE = "google.com";
 
+app.get("/", (req, res) => {
+  res.send(
+    "<h1>Welcome to Bunnylol, a smart browser bookmarking service!</h1> " +
+      "<br/><br/>" +
+      "To use Bunnylol add the following URL as your default search engine: <strong>https://lolbunny.herokuapp.com/go?query=%s</strong>"
+  );
+});
+
 app.get("/go", (req, res) => {
   type RequestParams = {
     query: string;
